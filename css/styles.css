@@ -1,42 +1,181 @@
-#check {
-    display: none;
+*{
+    margin: 0px;
+    padding: 0px;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 3%;
+   
+}
+.menu a{
+    padding: 2%;
+    text-decoration: none;
+    color: black;
+    
 }
 
-@media(max-width: 768px) {
+#home{
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: minmax(200px, auto);
+    justify-items: center;
+    justify-content: space-between;
+    padding: 3% 15%;
+    column-gap: 20%;
+    text-align: center;
+    
+    
+} 
+#productos h2,
+#home h2{
+    padding-top: 15%;
+    padding-bottom: 19px;
+    font-size: 3rem;
+}
+#home p{
+    font-size: 1.9rem;
+    padding-bottom: 10%;
+}
 
-    .mostrar-menu,
-    .esconder-menu {
-        display: block;
-       
+.imagenes{
+    width: 400px;
+    height: 500px;
+    background-size: cover; 
+    animation: cambioImagen 10s ease-in infinite;
+
+}
+/* inicio productos  */
+#productos img:hover{
+    transform: scale(1.01);
+    /* para generar la sombra solo al item con fondo transparente */
+    display: inline-block;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+
+}
+
+#productos img{
+    height: 300px;
+}
+#productos{
+    padding: 5%;
+    margin-bottom: 14%;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    row-gap: 10%;
+}
+
+.desc{
+    position: absolute;
+    bottom: 0px;
+    width: 80%;   
+    height: 20%;
+    background-color: rgba(34, 34, 34, 0.197);
+    text-align: center;
+    opacity: 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    filter: contrast(1.2); 
+    transition: opacity 0.7s ease;
+    border-radius: 5%;
+}
+.desc:hover{
+    opacity: 1;
+    
+}
+.item{
+    display: flex; 
+    justify-content: center;
+    position: relative;
+    border-radius: 10%;
+    border: 5px solid rgb(185, 185, 185);
+    
+}
+#productos h2{
+    margin-bottom: 150px;
+    text-align: center;
+}
+
+/* hover revisar */
+.compra:hover{
+    color: rgb(150, 233, 224);
+}
+/* footer */
+#contacto {
+    margin-top: 200px;
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: minmax(200px, auto);
+    justify-items: center;
+    justify-content: space-between;
+    padding: 3% 15%;
+    column-gap: 20%;
+    text-align: center;
+    row-gap: 50px;
+}
+#contacto img{
+    height: 60px;
+}
+#contacto h2{
+    margin-bottom: 30px;
+}
+.contacto-item p{
+    font-size: 19px;
+    
+}
+
+@keyframes cambioImagen {
+    0%, 24%{
+        opacity: 1;
+        background-image: url('../imagenes/maquillaje.png');
     }
-
-    .menu {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        
-        right: -100%;
-        top: 0;
+    25% {
+        opacity: 0;
+        background-image: url('../imagenes/maquillaje.png');
+    }
+    26%, 49%{
+        opacity: 1;
+        background-image: url('../imagenes/ropa.png');
+    }
+    50% {
+        opacity: 0;
+        background-image: url('../imagenes/ropa.png');
+    }
+    51%, 74% {
+        opacity: 1;
+        background-image: url('../imagenes/iphone.png');
+    }
+    75% {
+        opacity: 0;
+        background-image: url('../imagenes/iphone.png');
+    }
+    76%, 99% {
+        opacity: 1;
+        background-image: url('../imagenes/maquillaje.png');
+    }
+    100% {
+        opacity: 0;
+        background-image: url('../imagenes/maquillaje.png');
+    }
+}
+@media(max-width: 868px){
+    .container{
         text-align: center;
-        padding: 100px 0px;
-        z-index: 100;
-        transition: 0.8s;
+        align-items: center;
+        justify-content: center;
+        height: 700px;
+        flex-direction: column;
+
+        
+        } 
+    #productos h2{
+        margin-bottom: 190px;
+        
     }
 
-    .menu a {
-        display: block;
-        padding: 20px;
-
-    }
-
-    .esconder-menu {
-        position: absolute;
-        top: 40px;
-        right: 40px;
-    }
-
-    #check:checked~.menu {
-        right: 0;
-
-    }
 }
