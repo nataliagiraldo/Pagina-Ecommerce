@@ -142,7 +142,7 @@ header {
     display: flex;
     justify-content: center;
     position: relative;
-    border-radius: 15px;
+    border-radius: 10px;
     box-shadow: 1px 1px 4px rgb(94, 94, 94);
     background-color: #fffefe76;
 
