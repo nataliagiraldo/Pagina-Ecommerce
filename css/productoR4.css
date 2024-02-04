@@ -1,0 +1,280 @@
+/* reset */
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Play', sans-serif;
+}
+
+/* menu */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 3%;
+}
+
+.menu a {
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+
+}
+
+.menu a:hover {
+    color: rgb(112, 116, 116);
+}
+
+.mostrar-menu,
+.esconder-menu {
+    font-size: 35px;
+    cursor: pointer;
+    display: none;
+}
+
+.mostrar-menu {
+    order: 1;
+}
+
+.esconder-menu {
+    position: absolute;
+
+
+}
+
+
+#check {
+    display: none;
+}
+
+/* fin menu */
+/* cambio imagenes */
+.fotoPrincipal1 {
+    background: url('https://cdn.shopify.com/s/files/1/1845/8019/files/GIA13722_ZARRIA_SKIRT_BLCH_DENIM_FRONT.jpg?v=1697597256&width=3840&quality=75') no-repeat;
+    background-size: cover;
+    height: 600px;
+    width: 390px;
+    grid-column: 2;
+    grid-row: 1/span 4;
+}
+
+.imagenes2:hover~.fotoPrincipal1 {
+    background: url('https://cdn.shopify.com/s/files/1/1845/8019/files/GIA13722_ZARRIA_SKIRT_BLCH_DENIM_SIDE_2.jpg?v=1697593960&width=3840&quality=75') no-repeat;
+    background-size: cover;
+
+}
+
+.imagenes3:hover~.fotoPrincipal1 {
+    background: url('https://cdn.shopify.com/s/files/1/1845/8019/files/GIA13722_ZARRIA_SKIRT_BLCH_DENIM_BACK.jpg?v=1697593960&width=3840&quality=75') no-repeat;
+    background-size: cover;
+
+}
+
+.imagenes4:hover~.fotoPrincipal1 {
+    background: url('https://cdn.shopify.com/s/files/1/1845/8019/files/GIA13722_ZARRIA_SKIRT_BLCH_DENIM_FRONT.jpg?v=1697597256&width=3840&quality=75') no-repeat;
+    background-size: cover;
+
+}
+/* fin cambio imagenes */
+
+.imagenes {
+    display: grid;
+    grid-column: 130px 450px;
+    justify-items: center;
+
+}
+
+.imagenes1 img,
+.imagenes2 img,
+.imagenes3 img,
+.imagenes4 img {
+    object-fit: cover;
+    height: 100%;
+    width: 80%;
+
+}
+
+.imagenes1,
+.imagenes2,
+.imagenes3,
+.imagenes4 {
+    height: 120px;
+    width: 80px;
+    grid-column: 1;
+}
+
+.infoProducto {
+    display: grid;
+    padding: 2% 10%;
+    column-gap: 100px;
+    row-gap: 50px;
+    /* para no usar media query */
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
+.reseñas {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10%;
+
+
+}
+
+/* espacios */
+
+
+.info {
+    padding-bottom: 5%;
+    border-radius: 10px;
+    background-color: #22549114;
+    padding: 10px 10px;
+
+}
+
+.info h2 {
+    padding-bottom: 4%;
+}
+
+.rw {
+    padding-bottom: 5%;
+    border-radius: 10px;
+    background-color: #22549114;
+    padding: 10px 10px;
+    margin-top: 50px;
+
+}
+/* boton añadir */
+.frame {
+    margin-top: 15px;
+    width: 100%;
+    height: 50px;   
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    perspective: 150px;
+}
+
+.cb {
+    display: none;
+}
+
+.button {
+    text-align: center;
+    display: block;
+    width: 100px;
+    height: 50px;
+    border-radius: 25px;
+    line-height: 46px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transform-style: preserve-3d;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+    box-shadow: 4px 8px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+.front, .back {
+    box-sizing: border-box;
+    position: absolute;
+    display: block;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: #34495E;
+    background: #fff;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    backface-visibility: hidden;
+    transform: rotateX(0);
+}
+
+.back {
+    z-index: 1;
+    color: #fff;
+    background: #225491;
+    border: 2px solid #fff;
+    transform: rotateX(180deg);
+}
+
+.cb:checked ~ .button {
+    transform: rotateX(180deg);
+    box-shadow: 4px -8px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* fin boton añadir */
+.rw h4{
+    margin-bottom: 4%;
+}
+.mixta{
+    margin-top: 4%;
+}
+
+@media (max-width: 868px) {
+    .imagenes {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .fotoPrincipal1 {
+        grid-column: 1 / span 4;
+    }
+
+    .imagenes1 {
+        grid-column: 1;
+    }
+
+    .imagenes2 {
+        grid-column: 2;
+    }
+
+    .imagenes3 {
+        grid-column: 3;
+    }
+
+    .imagenes4 {
+        grid-column: 4;
+
+    }
+
+    /* inicio men */
+    .mostrar-menu,
+    .esconder-menu {
+        display: block;
+
+    }
+
+    .menu {
+        position: fixed;
+        width: 100%;
+        height: 20%;
+        background-color: #5252551c;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        right: -100%;
+        top: 0;
+        text-align: center;
+        padding: 100px 0px;
+        z-index: 100;
+        transition: 0.8s;
+    }
+
+    .menu a {
+        display: block;
+        padding: 20px;
+
+    }
+
+    .esconder-menu {
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+
+    #check:checked~.menu {
+        right: 0;
+
+    }
+
+    /* fin menu respo */
+
+}
