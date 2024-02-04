@@ -210,6 +210,7 @@ header {
     margin-top: 4%;
 }
 
+
 @media (max-width: 868px) {
     .imagenes {
         grid-template-columns: repeat(4, 1fr);
