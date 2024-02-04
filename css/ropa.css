@@ -64,6 +64,9 @@ header {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 20px;
+    object-fit: cover;
+    overflow: hidden;
+  
 
 }
 
